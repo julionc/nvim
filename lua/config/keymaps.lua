@@ -18,6 +18,12 @@ vim.api.nvim_create_user_command("Q", "q", {})
 vim.api.nvim_create_user_command("WQ", "wq", {})
 vim.api.nvim_create_user_command("Wq", "wq", {})
 
+-- Normal mode: Ctrl+C
+vim.keymap.set({'n', 'v'}, '<C-c>', '"+y', { noremap = true, silent = true })
+
+-- Normal mode: Ctrl+V
+vim.keymap.set({'n', 'i', 'v'}, '<C-v>', '"+p', { noremap = true, silent = true })
+
 -- Plugins
 map("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find files" })
 map("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Live grep" })
